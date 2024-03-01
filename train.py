@@ -16,6 +16,22 @@ from model.losses import cosine_similarity_loss, focal_loss, l1_loss
 
 warnings.filterwarnings("ignore")
 
+def str2bool(v):                    # 更容易的处理布尔选项，增加对用户友好性和输入数据的灵活性
+    """
+    Input:
+        v - string
+    output:
+        True/False
+    """
+    if isinstance(v, bool):
+        return v
+    if v.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif v.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Boolean value expected.')
+
 
 def train(args, category, rotate_90=False, random_rotate=0):
     if not os.path.exists(args.checkpoint_path):
@@ -180,8 +196,8 @@ if __name__ == "__main__":
     parser.add_argument("--checkpoint_path", type=str, default="./saved_model/")
     parser.add_argument("--run_name_head", type=str, default="DeSTSeg_MVTec")
     parser.add_argument("--log_path", type=str, default="./logs/")
-    parser.add_argument('--fp', default=True, type=bool)
-    parser.add_argument('--kr', default=True, type=bool)
+    parser.add_argument('--fp', default=True, type=str2bool)
+    parser.add_argument('--kr', default=True, type=str2bool)
 
     parser.add_argument("--bs", type=int, default=32)
     parser.add_argument("--lr_de_st", type=float, default=0.4)
