@@ -10,7 +10,7 @@ We use the MVTec AD dataset for experiments. To simulate anomalous image, the De
 
 ## Installation
 
-Please install the dependency packages using the following command by **pip**:
+Please install the dependency packages using the following command by **pip**:          
 
 ```
 pip install -r requirements.txt
