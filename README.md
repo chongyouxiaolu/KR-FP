@@ -2,7 +2,7 @@
 
 ## Datasets
 
-We use the MVTec AD dataset for experiments. To simulate anomalous image, the Describable Textures Dataset (DTD) is also adopted in our work. Users can run the **download_dataset.sh** script to download them directly.
+We use the MVTec AD dataset for experiments. To simulate anomalous image, the Describable Textures Dataset (DTD) is also adopted in our work. Users can run the **download_dataset.sh** script to download them directly.       
 
 ```
 ./scripts/download_dataset.sh
